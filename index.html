@@ -1007,7 +1007,7 @@
     <div class="summary-grid">
       <div class="summary-label">01 — About</div>
       <div class="summary-prose">
-        <p>I build the customer functions that subscription businesses lean on for retention, growth, and product feedback. At <span class="highlight">Mintel</span>, I built and led a 30-person customer success and support function across nine APAC markets, sustaining <strong>90%+ value retention</strong> on a $50M portfolio.</p>
+        <p>I build the customer functions that subscription businesses lean on for retention, growth, and product feedback. At <span class="highlight">Mintel</span>, I built and led a 30-person customer success and support function across nine APAC markets, sustaining <strong>90%+ value retention</strong> on a $25M APAC portfolio — and earlier managed a $50M EMEA portfolio as VP EMEA.</p>
         <p>Most recently I co-founded <span class="highlight">Aether</span>, an AI-native research platform — building the customer function from zero in a founder-led environment, hiring distributed across ANZ and the US, and standing up onboarding, helpdesk, and health-scoring from scratch.</p>
       </div>
     </div>
@@ -1017,7 +1017,7 @@
   <section id="ask" class="fade-up">
     <div class="section-head">
       <div class="section-num">02 — Q&amp;A</div>
-      <h2 class="section-title">Ask <em>Rosie</em> AI.</h2>
+      <h2 class="section-title">Ask <em>Rosie</em>.</h2>
     </div>
 
     <div class="chat-card">
@@ -1025,22 +1025,24 @@
         <span class="chat-status"></span>
         <h3 class="chat-title">Have a question about my experience?</h3>
       </div>
-      <p class="chat-sub">Trained on Rosanna's CV and career profile — ask about specific roles, results, leadership style, or how a past project might apply to yours.</p>
+      <p class="chat-sub">Click a question below or type your own — common questions answered directly from Rosanna's career profile.</p>
 
       <div class="chat-suggestions">
-        <button class="chat-chip" data-q="Tell me about your experience scaling customer success teams.">Scaling CS teams</button>
-        <button class="chat-chip" data-q="What's your approach to customer retention?">Retention approach</button>
-        <button class="chat-chip" data-q="How did you build the customer function at Aether from scratch?">Building from zero</button>
-        <button class="chat-chip" data-q="What was your biggest commercial result at Mintel?">Mintel results</button>
-        <button class="chat-chip" data-q="Tell me about your leadership style.">Leadership style</button>
+        <button class="chat-chip" data-faq="teams">Scaling CS teams</button>
+        <button class="chat-chip" data-faq="retention">Retention approach</button>
+        <button class="chat-chip" data-faq="aether">Building from zero</button>
+        <button class="chat-chip" data-faq="mintel">Mintel results</button>
+        <button class="chat-chip" data-faq="leadership">Leadership style</button>
+        <button class="chat-chip" data-faq="looking">What are you looking for?</button>
+        <button class="chat-chip" data-faq="tools">Tools &amp; tech</button>
       </div>
 
       <div class="chat-messages" id="messages">
-        <div class="chat-empty" id="emptyState">Ask anything about Rosanna's career, results, or approach…</div>
+        <div class="chat-empty" id="emptyState">Click a question above or type your own…</div>
       </div>
 
       <div class="chat-input-row">
-        <input type="text" class="chat-input" id="chatInput" placeholder="What would you like to know?" autocomplete="off" />
+        <input type="text" class="chat-input" id="chatInput" placeholder="Type a question…" autocomplete="off" />
         <button class="chat-send" id="chatSend">
           Ask
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1048,7 +1050,7 @@
       </div>
 
       <div class="chat-disclaimer">
-        AI can make mistakes — please talk to the real Rosie to clarify project experience.
+        For anything not covered here, reach Rosanna directly at rosanna.dedecius@gmail.com.
       </div>
     </div>
   </section>
@@ -1152,7 +1154,7 @@
           <div class="role-company">Mintel Market Research <span class="sep">·</span> 9.5 years, four progressions</div>
           <p class="role-context">Global consumer market research firm with both SaaS platform and consulting proposition. Progressed from Senior Client Services Manager → Team Lead → VP EMEA → VP APAC.</p>
           <ul class="role-bullets">
-            <li>Owned the retention KPI across a <strong>$50M SaaS portfolio</strong> of 3,000 enterprise accounts and 50k monthly users.</li>
+            <li>Owned the retention KPI across a <strong>$25M APAC SaaS portfolio</strong> (3,000 enterprise accounts, 50k monthly users) and a <strong>$50M EMEA portfolio</strong> in the prior VP EMEA role.</li>
             <li>Sustained <strong>90%+ value retention</strong>; designed CS referral program contributing $250k+ in upsell in FY22 alone.</li>
             <li>Built and led a 30+ person multi-market customer success and support function across APAC and EMEA — designed the operating models including vision, structure, SLAs, KPIs, SOPs, RACI, hiring plans, and career ladders.</li>
             <li>Transformed CS: unified regional teams, established full-service helpdesk, rolled out a global tiered service model.</li>
@@ -1324,21 +1326,63 @@
 </div>
 
 <script>
-  // ───────── ASK ROSIE CHAT ─────────
-  // Calls a Cloudflare Worker that holds the Anthropic API key as an
-  // encrypted secret. The Worker also holds the system prompt with Rosanna's bio.
+  // ───────── FAQ DATABASE ─────────
+  const FAQS = {
+    teams: {
+      question: "Tell me about scaling customer success teams.",
+      answer: "**At Mintel**, Rosanna built and led a 30+ person customer success and support function across nine APAC markets — hired 15 people in FY21 alone, and managed 16 direct reports at peak.\n\nShe designed the full operating model from scratch: vision, org structure, hiring plans, SOPs, KPIs, RACI, and career ladders. She also unified three separate regional teams into one cohesive EMEA function in a prior role.\n\n**At Aether**, she built the customer function from zero as co-founder — hiring distributed team across ANZ and the US, standing up the helpdesk, and establishing the operating rhythm from day one."
+    },
+    retention: {
+      question: "What's your approach to customer retention?",
+      answer: "Rosanna's approach centres on proactive engagement over reactive firefighting. At Mintel she sustained **90%+ value retention** across both her $25M APAC and $50M EMEA portfolios — with South APAC hitting 90% and New Zealand hitting 95%.\n\nKey tools she uses: customer health scoring frameworks to surface risk early, tiered service models so each segment gets the right level of attention, structured QBRs, and segmentation frameworks that help commercial teams identify upsell opportunities.\n\nAt Aether she applied the same principles in a startup context — managing a $400k+ Q1 renewal portfolio and retaining Kiwibank, TPG Telecom, Spark, and Cochlear through product-maturity challenges."
+    },
+    aether: {
+      question: "How did you build the customer function at Aether from scratch?",
+      answer: "Aether was a seed-funded ($3.8m) AI-native research platform. Rosanna joined as co-founder and Chief Customer Officer with no existing customer function.\n\nShe hired a distributed team (2 ANZ Customer Partners, 1 US Customer Partner, 1 Ops Support Lead), stood up Intercom as the helpdesk, built structured onboarding flows, and created renewal health dashboards to track the portfolio.\n\nShe also designed a customer health scoring framework, established a weekly operating rhythm, and created the \"Define, Outline, Refine\" prompting framework to help enterprise users get the most from the platform. The company reached $600k+ ARR at public launch with 18+ enterprise customers across ANZ and the US."
+    },
+    mintel: {
+      question: "What were your biggest results at Mintel?",
+      answer: "Rosanna spent 9.5 years at Mintel across four progressions, finishing as VP of Client Service APAC.\n\n**Key numbers:**\n- 90%+ value retention on a $25M APAC SaaS portfolio (3,000 enterprise accounts); previously owned a $50M EMEA portfolio\n- FY22 (APAC): improved retention 2% YoY = **$520k saved**\n- CS team contributed $250k+ in upsell in a single year\n- Key Account Winback (Associated British Foods): converted a cancelled client into a 3-year, £70k/year deal\n- Delivered 2,000+ hours of consumer trend presentations to 600+ companies\n\nRated Exceeds Expectations in FY21 and FY22."
+    },
+    leadership: {
+      question: "What's your leadership style?",
+      answer: "Rosanna leads as a **DI on the DISC profile** (The Initiator) — direct and results-oriented, but people-energised. She makes the call, then brings the team along.\n\nAs an **ESTJ (The Executive)** on Myers-Briggs, she finds deep satisfaction in turning ambiguity into systems — operating models, SOPs, RACIs, KPIs — that let teams move with clarity.\n\nHer Sparketype is **Essentialist + Sage**: wired to identify what really matters, strip away the noise, and teach it.\n\nManager feedback from Sean Lim (Mintel APAC): *\"Rosie is a fantastic people manager... well respected by her team... the most process-driven mind in the senior team.\"*"
+    },
+    looking: {
+      question: "What are you looking for?",
+      answer: "Rosanna is currently open to **Head of Customer Success** and senior CX leadership roles in **Melbourne**.\n\nShe's particularly interested in subscription businesses, B2B SaaS, and AI-native products — environments where she can build or scale a customer function and tie retention directly to commercial outcomes.\n\nGet in touch at rosanna.dedecius@gmail.com or connect on LinkedIn at /in/rosannadedecius."
+    },
+    tools: {
+      question: "What tools and tech do you work with?",
+      answer: "Rosanna's core stack across her career:\n\n**CRM & CS:** Salesforce (including enablement and adoption programmes), Intercom (helpdesk and onboarding)\n\n**Analytics:** Mixpanel, customer health dashboards, renewal portfolio tracking\n\n**AI:** LLM evaluation (benchmarked Aether against Claude, ChatGPT, Gemini, and others), prompt engineering frameworks for enterprise users\n\n**Markets:** APAC (ANZ, Singapore, India, China, Japan, Korea, SEA), EMEA (UK, Europe), Americas"
+    }
+  };
 
-  // 👇 STEP 7 — replace with your Cloudflare Worker URL
-  const WORKER_URL = "https://ask-rosie.rosanna-dedecius.workers.dev/";
+  // Keyword map for typed questions
+  const KEYWORD_MAP = [
+    { keys: ['team', 'scale', 'scaling', 'hire', 'hiring', 'build', 'headcount', 'people', 'staff'], faq: 'teams' },
+    { keys: ['retain', 'retention', 'churn', 'renew', 'renewal', 'keep', 'kpi'], faq: 'retention' },
+    { keys: ['aether', 'startup', 'founder', 'zero', 'scratch', 'early'], faq: 'aether' },
+    { keys: ['mintel', 'result', 'number', 'commercial', 'revenue', 'metric', 'achievement', 'portfolio'], faq: 'mintel' },
+    { keys: ['lead', 'leadership', 'style', 'manage', 'manager', 'disc', 'mbti', 'myers', 'personality'], faq: 'leadership' },
+    { keys: ['look', 'open', 'role', 'job', 'position', 'seek', 'want', 'available', 'opportunity'], faq: 'looking' },
+    { keys: ['tool', 'tech', 'software', 'salesforce', 'intercom', 'mixpanel', 'platform', 'stack'], faq: 'tools' },
+  ];
 
+  function findFaq(text) {
+    const lower = text.toLowerCase();
+    for (const { keys, faq } of KEYWORD_MAP) {
+      if (keys.some(k => lower.includes(k))) return faq;
+    }
+    return null;
+  }
+
+  // ───────── CHAT UI ─────────
   const messagesEl = document.getElementById('messages');
   const emptyState = document.getElementById('emptyState');
   const inputEl = document.getElementById('chatInput');
   const sendBtn = document.getElementById('chatSend');
   const chips = document.querySelectorAll('.chat-chip');
-
-  const conversation = [];
-  let isLoading = false;
 
   function escapeHtml(s) {
     return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1356,84 +1400,48 @@
     const div = document.createElement('div');
     div.className = `msg ${role}`;
     if (role === 'bot') {
-      div.innerHTML = `<span class="msg-label">Rosie AI</span>${renderMarkdown(text)}`;
+      div.innerHTML = `<span class="msg-label">Rosie</span>${renderMarkdown(text)}`;
     } else {
       div.textContent = text;
     }
     messagesEl.appendChild(div);
     messagesEl.scrollTop = messagesEl.scrollHeight;
-    return div;
   }
 
-  function addTyping() {
-    if (emptyState && emptyState.parentNode) emptyState.remove();
-    const div = document.createElement('div');
-    div.className = 'msg bot';
-    div.id = 'typingIndicator';
-    div.innerHTML = '<span class="msg-label">Rosie AI</span><div class="typing"><span></span><span></span><span></span></div>';
-    messagesEl.appendChild(div);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
-  }
+  function sendMessage(faqKey, typedText) {
+    const faq = FAQS[faqKey];
+    const question = typedText || (faq ? faq.question : null);
+    if (!question) return;
 
-  function removeTyping() {
-    const t = document.getElementById('typingIndicator');
-    if (t) t.remove();
-  }
-
-  async function sendMessage(text) {
-    if (!text || isLoading) return;
-    isLoading = true;
-    sendBtn.disabled = true;
     inputEl.value = '';
-    addMessage('user', text);
-    conversation.push({ role: 'user', content: text });
-    addTyping();
+    addMessage('user', question);
 
-    try {
-      const response = await fetch(WORKER_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: conversation })
-      });
-
-      const data = await response.json();
-      removeTyping();
-
-      if (data.error) {
-        const msg = typeof data.error === 'string' ? data.error : (data.error.message || JSON.stringify(data.error));
-        addMessage('bot', `Sorry — ${msg} Please try again, or email Rosanna directly at rosanna.dedecius@gmail.com.`);
-        return;
-      }
-
-      const reply = (data.content || [])
-        .filter(b => b.type === 'text')
-        .map(b => b.text)
-        .join('\n')
-        .trim();
-
-      if (reply) {
-        addMessage('bot', reply);
-        conversation.push({ role: 'assistant', content: reply });
+    setTimeout(() => {
+      if (faq) {
+        addMessage('bot', faq.answer);
       } else {
-        addMessage('bot', "I had trouble answering that one — could you try rephrasing? Or you can email Rosanna directly at rosanna.dedecius@gmail.com.");
+        addMessage('bot', "That one's not in my FAQ list — reach Rosanna directly at rosanna.dedecius@gmail.com or on LinkedIn at /in/rosannadedecius.");
       }
-    } catch (err) {
-      removeTyping();
-      addMessage('bot', "Something went wrong reaching the AI. Please try again, or email Rosanna directly at rosanna.dedecius@gmail.com.");
-      console.error(err);
-    } finally {
-      isLoading = false;
-      sendBtn.disabled = false;
-      inputEl.focus();
-    }
+    }, 320);
   }
 
-  sendBtn.addEventListener('click', () => sendMessage(inputEl.value.trim()));
-  inputEl.addEventListener('keydown', e => {
-    if (e.key === 'Enter') sendMessage(inputEl.value.trim());
+  sendBtn.addEventListener('click', () => {
+    const text = inputEl.value.trim();
+    if (!text) return;
+    const key = findFaq(text);
+    sendMessage(key, text);
   });
+
+  inputEl.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    const text = inputEl.value.trim();
+    if (!text) return;
+    const key = findFaq(text);
+    sendMessage(key, text);
+  });
+
   chips.forEach(chip => {
-    chip.addEventListener('click', () => sendMessage(chip.dataset.q));
+    chip.addEventListener('click', () => sendMessage(chip.dataset.faq));
   });
 
   // ───────── STICKY NAV ─────────
