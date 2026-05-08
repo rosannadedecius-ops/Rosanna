@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rosanna Dedecius — Customer Success Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #FAF6F1;
+    --bg-alt: #F4EFE8;
+    --ink: #1B1816;
+    --ink-soft: #4A4540;
+    --ink-muted: #8A847D;
+    --rule: rgba(27, 24, 22, 0.10);
+    --rule-soft: rgba(27, 24, 22, 0.06);
+    --blush: #F2D4D4;
+    --blush-deep: #E8B8BC;
+    --rose: #C97D85;
+    --rose-deep: #A85961;
+    --serif: "Fraunces", "Times New Roman", serif;
+    --sans: "Hanken Grotesk", -apple-system, sans-serif;
+    --mono: "JetBrains Mono", monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Subtle paper texture using SVG noise */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 64px 56px 80px;
+  }
+
+  /* ───────── HEADER ───────── */
+  header.hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: end;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rose);
+    box-shadow: 0 0 0 4px var(--blush);
+  }
+
+  h1.name {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(56px, 9vw, 124px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    margin-bottom: 24px;
+    font-variation-settings: "opsz" 144;
+  }
+
+  h1.name .accent {
+    font-style: italic;
+    font-weight: 400;
+    background: linear-gradient(to top, var(--blush) 32%, transparent 32%);
+    padding: 0 0.05em;
+  }
+
+  .tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 2.2vw, 26px);
+    line-height: 1.4;
+    color: var(--ink-soft);
+    max-width: 620px;
+    letter-spacing: -0.005em;
+  }
+
+  .photo-frame {
+    width: 180px;
+    height: 220px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 24px 40px -20px rgba(80, 50, 40, 0.25);
+    transform: rotate(2deg);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .photo-frame:hover { transform: rotate(0deg) scale(1.02); }
+
+  .photo-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 60%, rgba(201, 125, 133, 0.08));
+    pointer-events: none;
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Quick contact row */
+  .quick-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 36px;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+  }
+
+  .quick-meta a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+
+  .quick-meta a:hover {
+    color: var(--rose-deep);
+    border-bottom-color: var(--rose);
+  }
+
+  /* ───────── SECTIONS ───────── */
+  section {
+    margin-bottom: 88px;
+    scroll-margin-top: 32px;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 48px;
+    align-items: baseline;
+    margin-bottom: 40px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--rose-deep);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+
+  .section-title em {
+    font-weight: 400;
+  }
+
+  /* ───────── ABOUT / SUMMARY ───────── */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 48px;
+  }
+
+  .summary-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    padding-top: 4px;
+  }
+
+  .summary-prose {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  .summary-prose p + p { margin-top: 18px; }
+
+  .summary-prose .highlight {
+    background: linear-gradient(to top, var(--blush) 38%, transparent 38%);
+    padding: 0 0.1em;
+  }
+
+  /* ───────── EXPERIENCE TIMELINE ───────── */
+  .timeline { display: flex; flex-direction: column; gap: 56px; }
+
+  .role {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 48px;
+    position: relative;
+  }
+
+  .role-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .role-dates {
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+
+  .role-location {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .role-content { padding-bottom: 8px; }
+
+  .role-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 4px;
+  }
+
+  .role-company {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+
+  .role-company .sep {
+    margin: 0 8px;
+    color: var(--rose);
+  }
+
+  .role-context {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    margin-bottom: 18px;
+    max-width: 620px;
+  }
+
+  .role-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .role-bullets li {
+    position: relative;
+    padding-left: 22px;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 720px;
+  }
+
+  .role-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 1px;
+    background: var(--rose);
+  }
+
+  .role-bullets li strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ───────── EDUCATION + SKILLS GRID ───────── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  .edu-list { display: flex; flex-direction: column; gap: 20px; }
+
+  .edu-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+    padding: 16px 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .edu-item:first-child { border-top: 1px solid var(--rule); }
+
+  .edu-year {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--rose-deep);
+    letter-spacing: 0.05em;
+    padding-top: 3px;
+  }
+
+  .edu-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .edu-inst {
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  .skill-cluster { margin-bottom: 28px; }
+
+  .skill-cluster-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-tag {
+    background: var(--bg-alt);
+    border: 1px solid var(--rule-soft);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    transition: all 0.25s;
+    cursor: default;
+  }
+
+  .skill-tag:hover {
+    background: var(--blush);
+    border-color: var(--blush-deep);
+    color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  /* ───────── PERSONALITY ───────── */
+  .personality-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .persona-card {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .persona-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blush), var(--rose), var(--blush));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+  }
+
+  .persona-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -24px rgba(80, 50, 40, 0.18);
+    border-color: var(--blush-deep);
+  }
+
+  .persona-card:hover::before { transform: scaleX(1); }
+
+  .persona-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+  }
+
+  .persona-code {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .persona-name {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--rose-deep);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .persona-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* ───────── ASK ROSIE CHAT ───────── */
+  .chat-card {
+    background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chat-card::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, var(--blush) 0%, transparent 70%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .chat-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .chat-status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--rose);
+    box-shadow: 0 0 0 0 var(--rose);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(201, 125, 133, 0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(201, 125, 133, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(201, 125, 133, 0); }
+  }
+
+  .chat-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 28px;
+    letter-spacing: -0.015em;
+  }
+
+  .chat-sub {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .chat-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .chat-chip {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--sans);
+  }
+
+  .chat-chip:hover {
+    background: var(--blush);
+    border-color: var(--blush-deep);
+    color: var(--ink);
+  }
+
+  .chat-messages {
+    background: var(--bg);
+    border-radius: 12px;
+    border: 1px solid var(--rule-soft);
+    min-height: 180px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+  }
+
+  .chat-empty {
+    color: var(--ink-muted);
+    font-style: italic;
+    font-family: var(--serif);
+    font-weight: 300;
+    text-align: center;
+    margin: auto;
+    font-size: 16px;
+  }
+
+  .msg {
+    max-width: 85%;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 15px;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .msg.user {
+    align-self: flex-end;
+    background: var(--ink);
+    color: var(--bg);
+    border-bottom-right-radius: 4px;
+  }
+
+  .msg.bot {
+    align-self: flex-start;
+    background: var(--blush);
+    color: var(--ink);
+    border-bottom-left-radius: 4px;
+  }
+
+  .msg.bot .msg-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--rose-deep);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .msg.bot p { margin-bottom: 8px; }
+  .msg.bot p:last-child { margin-bottom: 0; }
+  .msg.bot strong { font-weight: 600; }
+
+  .typing {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  .typing span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rose);
+    animation: bounce 1.2s infinite;
+  }
+
+  .typing span:nth-child(2) { animation-delay: 0.15s; }
+  .typing span:nth-child(3) { animation-delay: 0.3s; }
+
+  @keyframes bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
+
+  .chat-input-row {
+    display: flex;
+    gap: 10px;
+    position: relative;
+  }
+
+  .chat-input {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 100px;
+    padding: 14px 22px;
+    font-size: 15px;
+    font-family: var(--sans);
+    color: var(--ink);
+    outline: none;
+    transition: all 0.2s;
+  }
+
+  .chat-input:focus {
+    border-color: var(--rose);
+    box-shadow: 0 0 0 4px rgba(201, 125, 133, 0.12);
+  }
+
+  .chat-input::placeholder { color: var(--ink-muted); }
+
+  .chat-send {
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    border-radius: 100px;
+    padding: 0 28px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .chat-send:hover:not(:disabled) {
+    background: var(--rose-deep);
+    transform: translateY(-1px);
+  }
+
+  .chat-send:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .chat-send svg { width: 14px; height: 14px; }
+
+  .chat-disclaimer {
+    margin-top: 16px;
+    padding: 10px 16px;
+    background: rgba(201, 125, 133, 0.08);
+    border-left: 2px solid var(--rose);
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-style: italic;
+    line-height: 1.5;
+    position: relative;
+  }
+
+  /* ───────── CONTACT FOOTER ───────── */
+  .contact-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding: 48px;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 16px;
+    margin-top: 24px;
+  }
+
+  .contact-block h3 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-block h3 em {
+    color: var(--blush);
+    font-style: normal;
+  }
+
+  .contact-block p {
+    color: rgba(250, 246, 241, 0.7);
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 360px;
+  }
+
+  .contact-list { display: flex; flex-direction: column; gap: 18px; }
+
+  .contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--blush);
+  }
+
+  .contact-value {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--bg);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    display: inline-block;
+    align-self: flex-start;
+  }
+
+  .contact-value:hover {
+    color: var(--blush);
+    border-bottom-color: var(--blush);
+  }
+
+  footer.colophon {
+    text-align: center;
+    margin-top: 48px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+  }
+
+  /* ───────── STICKY NAV ───────── */
+  .sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(250, 246, 241, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .sticky-nav.visible {
+    transform: translateY(0);
+  }
+
+  .sticky-nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 56px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sticky-nav-name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .sticky-nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .sticky-nav-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .sticky-nav-links a:hover,
+  .sticky-nav-links a.active {
+    color: var(--rose-deep);
+  }
+
+  /* ───────── SCROLL ANIMATIONS ───────── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ───────── PRINT STYLES ───────── */
+  @media print {
+    .sticky-nav,
+    #ask,
+    footer.colophon { display: none; }
+
+    body::before { display: none; }
+
+    body {
+      background: #fff;
+      color: #000;
+      font-size: 11pt;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    header.hero {
+      padding-bottom: 24pt;
+      margin-bottom: 32pt;
+    }
+
+    h1.name {
+      font-size: 48pt;
+    }
+
+    .photo-frame {
+      width: 120px;
+      height: 145px;
+    }
+
+    section {
+      margin-bottom: 32pt;
+      page-break-inside: avoid;
+    }
+
+    .role {
+      page-break-inside: avoid;
+    }
+
+    .contact-block {
+      background: #1B1816;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .personality-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .chat-card { display: none; }
+
+    a { color: inherit; }
+  }
+
+  /* ───────── RESPONSIVE ───────── */
+  @media (max-width: 880px) {
+    .container { padding: 40px 28px 60px; }
+    header.hero {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .photo-frame {
+      width: 140px;
+      height: 170px;
+      justify-self: start;
+    }
+    .section-head,
+    .summary-grid,
+    .role { grid-template-columns: 1fr; gap: 16px; }
+    .role-meta { flex-direction: row; gap: 14px; }
+    .two-col { grid-template-columns: 1fr; gap: 56px; }
+    .personality-grid { grid-template-columns: 1fr; }
+    .contact-block { grid-template-columns: 1fr; padding: 32px; }
+    h1.name { font-size: 56px; }
+    .summary-prose { font-size: 18px; }
+    .chat-card { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="sticky-nav" id="stickyNav" aria-label="Page navigation">
+  <div class="sticky-nav-inner">
+    <span class="sticky-nav-name">Rosanna Dedecius</span>
+    <ul class="sticky-nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#ask">Ask Rosie</a></li>
+      <li><a href="#personality">Wiring</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- ───────── HEADER ───────── -->
+  <header class="hero">
+    <div>
+      <div class="eyebrow">
+        <span class="dot"></span>
+        Curriculum Vitae &nbsp;·&nbsp; 2026
+      </div>
+      <h1 class="name">Rosanna<br/><span class="accent">Dedecius</span></h1>
+      <p class="tagline">Customer success and service-delivery leader. Fifteen years building, scaling, and transforming customer functions in subscription businesses.</p>
+      <div class="quick-meta">
+        <span>South Melbourne</span>
+        <span>Australian Citizen</span>
+        <a href="mailto:rosanna.dedecius@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/rosannadedecius" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="photo-frame">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/wAARCADgAOADACIAAREBAhEB/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMAAAERAhEAPwDttJuFdBmtN7tYDlTiuZtVlgQGq93qMnmbK8RKW53upG1jev8AxAwXG7il0iddQb5jXG391iPJNLomsNbycGplU99RZjzdjutZsoraEsp7V5dqutPa3ZUPxmuq1PW5LqPaWrzXXv8AXFs81s522Jex01t4mCxAl+aVfFv7zG6vPvPZRjNVxdOJBzW9Gu4GNT3ke46PqD36gqa17yOaGAv7Vz3w9Hm20Zau615UTT2wP4a7HXbJjBWPO5dSleYpmlaWYr941iSXyJfyAkda0Y7xHTrQ8WlsXDDqW4mJXfljWzYw7V5rJWZFO7Iq7b6nEq8sKiri3KNio4eMZE1/aeYCQKwZISkmK05dbhLbA4qFZoZGLkinhsU0rMitQUtizpGlteyBcV0N34UeK33gEcVQ8PalDBeAZFd7c6pDNZ4GOlavE31uZqglozzaCzkgnIathI8rmqmq30VvKWPFZ51+FIz84rCpVctTWnBQ0Lt7OkIIJrAnu3LEqeKytS1v7RcYQ5Ge1adlZXN1bb1Q1z+1cdDdOHUWJprjgMaelrMJlBJq1pdvJHIVkXkU/Ubj7K4fFdUMS+U56lKLd0dfotuUtwSa7+vIbHxPEkIUnFevUqMnJtsckklYKKKK3JPN4LZpFHHFZuqWKxNnvXRwv5SAAVRvbR7ps9q8+3Q2OQvLA3EXy1U07SpVnweldqulMFwRT10sodyjmsXSu7gjlNU054Ydy9a881mOZXLPyK9nvdOlnXaQaw7vwityh3LVRpvqEndHjQJlbYoO41a/sW6VPOKHHWvRovA0cNwH2dDWzeaOiaeyBOcV0woRtqc70din8P8AUIoLdVdgCK7DxDrFu2nvhx92vFzDqFheuLckAnpVmdtYmixMzbTT20LRianfv/aUhRuN1LHrE6LjJqddAmklLN3q2nhxifmFc8qUm7ofM1sZra/MFIzVVvEFychCTXTS+Dt1vuA5pNL8IKkhMqfnVqn3YXlc5aPUrp5Nx3ZrSg1e6PyjdXYN4btU/gFT2WhWgl5UUnFIaujK0O4nNyC+RXbw6kRIkbHANRRaXaxn5cA0r2sTSD5sYqUrDG+JraBtOaQN822vI5ru6MxjG7bmvYp7CO4j2O+RWc3huxHIVc1dtCWmed2cbq6vIDXq3h/VbNNOCvtzisG50e2ThcVHFp6pwrYrFJplWNa41e2W7coQBWDd6tDeagsLMMZqzNom5Nyk5rOXwzun8wE7vWrVxNM1tQtrSOz3IQDjtXvNfPVzo9wYcNISor6Frpw6auOStFfMKKKK6TM4JJCTzVyJwfSuY/tqMd6eNeQd64NTo5TqHkAFCSrjmuWPiBT/ABUz/hIAOhoFynVvMnoKQNGy9q5I69nvUi66oHWncOVnSCON2qG+t0Fu3FYkeuIG61na743gs4miRDLNjkA4C/U/0o5mLkuZ11BGl6zkDArM1DxBZIvlRIZGHUqPlH41hah4in1J2G3y0bqBWe6SS8RQs59AKTbNYUkXpvFcNq3EW5j0AOafb+NHaQb9OkC+6msX/hHtVLtIYSM9hxUcmmapbZZrcbfRR/Wq5vMr2Pkel6d4rsblAk9tLCOm77w/Tn9K6SH7JcW4lt3SRD/EpzXiVpf/AOkCIyNaT9Arj5WrtNG1O6t5BISCp4df/r/41nKXLuJ0+x2ywJLJt21MNEDNuU4p9lJDJAJlbIPNWUvVRvvClo9iLdyrJpLxDdurOn064lPyE5FdAbxZFxuFPt3iQ5Yii2gcqOSFlqIbG44qcadenqxrrTJATkYo3xD0qLMfs0cfJo1y3JY0R6VIpAY11Ukqe1VHKs1TUuo6F04RvqRWumb4wDUj6QI1zV61kCqOalnmBjODRCTauxzhHmOcubYlCuK9ZrzIgs5r02uvCNu9zGukrJBRRRXYc54jJaqRxVGWEpXUtp6mmPpCOOa5DoTZyJJHHNICa6Z9AUjIqBvD7djQVcwtxo3n1rXk0KVTxmq50m4GeDQHMjMuLoWtrLM3RFzzXEC4n1i4byyzbnrqPF1vJb6FKr8ByF/r/SoPANpGyCdlz6VnJ21NacebQ2NH8IRxwo1yuW/u10cGjQQAFI1H4VrQQoUBqwUVa55TbPShSjFWM1LJAvKioLixhcYKqfwrRbO4gCq8nHNQmaOJxuueDrK/jYhAj+oFcPcLqfh+Xb5xePsx7fWvYJCr9Cp+hrl/Eeifa7V3jHzAdK3jK6szjq076oyPD/jmEP8AZLpTHng46KfWura4cjcr5U9CD1rxCSNo77yidkqH5QeN1eleFL6SXTmt5t2+I8BuoFXycj0ON6nSLeSrzuNP/tCfH3jVMkim7j6VpYgvpqcy/wAWanGryetY5c0ByKXIh3NZtVlPehNVbPNZO/1pC2KTpoOY6FdYwvBqSPUzIcbq5nzfenRzkNwaiaUI3HFczsdYl2meSK9Ur5/luJM8NX0BWuEkpJtGdeLi0mFFFFdhznnhYZp1Q7/WnB81wHUSZwtLnpUWeDTgeRRcCQ4Z6QRptY4pQcucUf8ALM07hZHD/Ea3DeHdwXpJk/8AfLVg+BGC2IXjiu28WWv2rw/MmM8bq878HTCB5oz/AMsz0rOeqOmhpI9Vs2wmCas5j7vg1zFx9sa1MsmpixGM4CjC/ietUtP1YO/kHVI7yQHqF2msLHoqa2OrurpYTj0rj7vUpJr959TkFvYRnEUIbmX3NdNebJrRXHXFYJ0r7XM0j/MrR+WUZR070JdxTu1oVYfE2izzpDFabVY4V/K71uuBJGpVSFI/ipthpENioEFrHEo/ujJ/Or74KbSKpPXQzcZWvJHkXjTw2Gv/AD4vl3+lGiyyWWoWyDdjhfn6/Q+1d9q1iLldjDvwa5G7t1SdCBghtgPritJTdrHOqSd2en2el206qwHDDNTy6JbhtoUVH4bn+0WURP3lUZrWJ3XIpqo2rnI42djFm0CIOOOtNl8PIuPet+bBlWluOdtPnYrHOS+HUVAwpp8OKYtwrpZ+Iloz/o9HOx2OYTwwrpuqOPwwWY4NdfbEeQ1OtcbmqZSutQUTj18MM0mDXsNcdEc3XSuxrpwtldIyrdAooorqMDyAXj09b9x2qDYaNmKx9kjT2jLa3+Rg1YS9Qlc1lEUbSDU+yH7Rm9Hcxhid1KZ1MZw1YOSO9LvcDhjU+yY/aI17wCWz2E5z2ryWygl0fxm0E33JJSo9xjj9RXojTylcZrj/ABXEwkivx/rY5Vbp24/wrOcWkbU5q5s6h4fl1e8S4vJpDbKuFt4+h9Sc1ftNGtrVg0dukIA5bvj3NaGmXKSQxluQVqvr91ujW1tvlMp2k1yttaHr04JrmLyCJ7QqnzDsfasqa7ubbcYghCHoR1FNjv7uBvLhhBTYBnd3qo1u5Y3F5KY0znYXwP8A69NNNWKsbltq4AC3MIU9iOhonukZsjpXNajq9vaQElJmUDORGa0dNtZp7ZZXBUMu4KeoFRqtSm09C5LiVc965LxWY0js8YWRmyAPQf8A666qb90orzHV7eSLxC0jzO6sGZVZs7Bu6CtfiVzim+R+p6Z4QvAYArH+HFdPG4a4rzbw9d+VIgzgN0ruobsJJuNRTeljlqKzNOT/AF4p8z/MorMOoKZwe1PmvkZ1razMro0bkfu1NIxC29UZ79WVRSvfxmADvRysd0X4P9Safa8FqzU1BFhxmn2+oR4IJFLlYcxoQtm4NdnXnsF7GJic16FXThupjV6BRRRXUYnkQU+tBXI5petBUnvigBuwZpxjA60qpt5okO6kFyPYhpCq04IBTwBQBDsrL1iyFzZSqR1WtvaKpai2y1k+lZVF7pVN+8Ynh29kW3a0lyssQ6e3+f51Zumle8jbaxUA4x61gwi8TUZ7y0TzRbQ+dLGDy0fQge/f/gNdpplzaX1qkyENHIMg15su57tCfu2MXT7y51DXP7MCtZrsLK78M5HUD045rtIdF0XT4hNqF2JpiuVMj7m3DqB/9asi/sUldXI+YchhS2ti6r8mz67BVJxNXzPRSsQardLqsyW8VqIrZezD5iAcjP5mtC0YK4XttIpn2RYup+Y9ahurhLNN2ecVMmmhWUSjqdwqKzE9K8o8Q6mya9EhYA/Nu9vmO3P+e9ejsTeuS33a8w8Zac0XiJyo4faw/EY/p+tbUUtmcmIbtdG7p2oY2FGwD09jXoumXn2y3G77wryXRwVh2t1BOT+VeiaFLsKHs3BrNJRmYVNYnSeXTWGKkPIqMg16UOVo89toQ0hz2NL0NBbPatOVE8zGYPrRhgetSKR0IpTspciDmZDlx3r2OvHzivYKOVLYd7hRRRTA8kC4p1Ju9qWkITmnfL/dpKKAuKNnpUqquOBUSjJqVVxQ2ArL8vSsfVxizce1azsw4rJ1IFoj78VjV+E1p/Ec74YupIrzVjbhnvhab7eLrvKsSeO/0+tSJ4ovrjwTqWqta20P9n3CLEqxlFZMgFck5zzXNai01pfrcW8jxSo25JEO0r9DWR4h1jW9dgEWoajNPGnzLGcKv5DiuOm4vSR6TbSuj0/RfE8Gp6dFchWWNuob+E+ldBb3MRYNv+T2ryf4a3eBd6dL1Db1B/Ku3Ng29ljkdPYGoqRUZOJ00ajcU2bl7qVqiE7hkVzs80moz5APljpUg0YmTLyM31rSjtkgQYFRsXOVytBb7FxivPfHke3VoJR91I2z+Yr03ivPPHQxOhxksMCqhJqRlNJqxgWVzGEXb3+Y12mlaolouJF3L1yOteeaarJNg8/4Vbu72W2ZU6p/Cac4XlZGDWh64muWd5GDaM3mKPmR+AfoatRPI4y6FfrXnXhWa1tNQE0zFztIyTnB9a75NYsTjMuM+1dlGE0tTkr0JRexaJNN3mrSBHQMpyDStCorpuclrFXdSbs1Z2J6U1lUdBRcWhWK17LXjzEDpXsNMYUUUUAeRfNTlYj0qvj/AGiaXHsaBFnePUUeYvrUSt/silaQD0pATLIB0FSB2YcLVZZB6808T4Hek3bccYtuyJjuI6Vh6lcKr7WbheeK0pHkdTzge1cjrkv2afBJLt0HpXLVqpqyO6lhZLWRhao6yNnue1YkxXzET/gJ/GrUlx5tzK/8KLge9Zl0cSswOdoArjtqdrhYt6LKdP1+C4U/f+R69VEnmRrMh7V4/ZGSW+4P3TkfWvQdG1VZF8lztcdjVVISspM6Y0WqalbRnTwOJVBB/OnSkKvXmqCsQdwOKe0hPvWRHKSs+FwDzWD4j0N9VtVMYzIhyK1t3ziqOs6x5K/ZbY/OR87j+GrpwlOdomlKjKrJQicG+leVJg/LKp+bHrWXe6dI84bdn2rqJSEUk9aosnVj1NezHBKK13PallNJQSe5QsYngxzkmu58PWu6JriZQ2Dhc/zrl7aHLgkcnpXodja+RaxR4+6tPFSVGlyx3ZzYmlChSst2Wop5V7/L6VegkimfZKzR5/iHIH4VVSLNTCDAzXmqs0eJPCwlqyzcWhtZArsGBGVZTkMPaovk9KjaZ1AQnKjsacQcda6qc+dHlV6LpSGsoz0r1yvJPLz3Net1qjEKKKKYHjZV/XFOVf70lO8hf4nzSiOIdOaQhuIx/ETQuzshNSDZ2WnD2ApMBobH8GKlWIvzVe5kKwjn7zAVbtZ1KAGuTEztoengKas5sa8ZHbisXU9KS7YSlcsvSuieRD0NQNgiuJs72zxLXYbjT7+aBYiGLbuOntVG0A8kg/M684Nd34qgX+22yAcxqa5mOzRZmKjGa9Cnh3KCkup6MMvc4xqLqLp0Ih5PLN1NaGPnDqSGHQimJEFXFTDhOlelCklHla0PcpUIqnyNaGvYa1sGy5PTo4/rVt9XtVbf5wI9B1rmtu45pywrnmuSWXQk7xdjllltOUrxdjVu9bkuGxbgxp6nrVDOCWbknnJpvC8Co5ZM13UMNCj8J3YfDU6K91DJvnbnoKhPLhaeTmmw/NIzfhW+lyqhe0qPzdTgT/bB/Ln+leiQRZArg/Dih9YX/ZzXpUCYUV4eYTvNI8DM5e+l5Cx2+BUjR4HSrCJgUjjiuFHltmTcJgU+1KNb/NyQcUXfGaqWrNmRVGcHNdFCXvHFi1eFy6ZAOAterV5IBMf4fzr1uu9HlhRRRTA8bafd93mkBkPRTSrdRjhELfQU7zpm+5Dj60CBUlPtUghOOXqMLct1YKKcIWP3pSaTAr3ahTGM560+IkL1qK9RYjGQck5p0T5WvNxT989jBfwyYO2etToSaiXaanT7tcvU67XOI8Vf8hs/9clrAVcMa3PEj+Zrc3fair+lYvevo8Kv3ET6bC6UIehIOKeo+UUwn5akzjiuqKR3ITFJ3oLUzPNNtBcVmxUDcg052zSD5qVxtiLyKWAbVpIhwakApNmb1dy54flEWuop/iyK9QtHDKK8eFx9k1G2uOiq43H2r1DR7oTgEHNeHj1aomeDmUf3iZ0IwEyajkPy5FSRnctMl6GuK55TMq7PFVtOk2XMvGcrUt43Wq+kSqLybf02f1rej8SObE/w2ax3uOEr06vMzd9kXNemV6MTyAoooqgPHxcxAYVc/QUw3Ln7sRqN7jaOAtRG7c8KPyFMgsedMT90LTwsjDl8fSqifaZWyIz+NWFiue5ApDTIb6HFvvzkoc/hUUD/AC1dNsXUrI5IPBArKgyjMh6qSDXBjIbSPTwM94l3zgvepVul8nfnisq8cqnFc/c6y1tZyQOSH5CH1zXCtXY9SKuQXk/2q9nmzkM5x9Bx/SqjDmo4ZVCqoOcDHNSkhq+qoxUaUYn09FJUorsKO1G7LGkx0qPOJDVtWNuaxNmom4zT84qKVsVLKuMZs0+LrUIJJqeMVSFzAPlkYevNSVG/Dg0O+0VD0ZN7Fa9G+Nl9q7fwA8smixPKcncwBPoDiuGmO5TXoHgsBdDtgP8Aa/8AQjXl45XSZ5GZbJnaxHgUlw/ymmIcLUcz8V5lmeKZV43WmaCiy3dzu7KKLw8GotHjdpbgo2Pu5/Wt6PxHLifgZ0mIox1Ar0avLBag8u5Nep16MTyQoooqgPIo0g/55gH3qdI1PC7RXq1FVcnlPKj5SffkA/GmtPAn3QWPsK9XoouHKeSG4d/uQfiayrmN475i4xvG7ivcKKxqw9pHlNqM/ZT5jwmePK1yHiGHbC54zX1LRXKsHrfmPQjmXL9n8f8AgHyTBEQg9anCkV9X0V6iq2VrHox4i5Vb2X4/8A+UskVFn94a+sqKft/Ip8Sf9Ovx/wCAfKDNioHbJr62oo9t5D/1k/6dfj/wD5LjGanHAr6top+30tYP9ZP+nX/k3/APlE4NMZc19Y0VLrX3QPiS/wDy6/8AJv8AgHyPIABXd+CjnSYh6M3/AKEa99ornrR9qrbHLiM79tHl9nb5/wDAPNB0qCbp1r1KiuX6p5nD9e/u/j/wDxa6brT9FZQbjcccr/WvZqKuGH5Xe5lVxXPG1jy7z1HCgmvUaKK6ErHIFFFFMAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z" alt="Portrait of Rosanna Dedecius" />
+    </div>
+  </header>
+
+  <!-- ───────── SUMMARY ───────── -->
+  <section id="about" class="fade-up">
+    <div class="summary-grid">
+      <div class="summary-label">01 — About</div>
+      <div class="summary-prose">
+        <p>I build the customer functions that subscription businesses lean on for retention, growth, and product feedback. At <span class="highlight">Mintel</span>, I built and led a 30-person customer success and support function across nine APAC markets, sustaining <strong>90%+ value retention</strong> on a $50M portfolio.</p>
+        <p>Most recently I co-founded <span class="highlight">Aether</span>, an AI-native research platform — building the customer function from zero in a founder-led environment, hiring distributed across ANZ and the US, and standing up onboarding, helpdesk, and health-scoring from scratch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── ASK ROSIE AI ───────── -->
+  <section id="ask" class="fade-up">
+    <div class="section-head">
+      <div class="section-num">02 — Q&amp;A</div>
+      <h2 class="section-title">Ask <em>Rosie</em> AI.</h2>
+    </div>
+
+    <div class="chat-card">
+      <div class="chat-header">
+        <span class="chat-status"></span>
+        <h3 class="chat-title">Have a question about my experience?</h3>
+      </div>
+      <p class="chat-sub">Trained on Rosanna's CV and career profile — ask about specific roles, results, leadership style, or how a past project might apply to yours.</p>
+
+      <div class="chat-suggestions">
+        <button class="chat-chip" data-q="Tell me about your experience scaling customer success teams.">Scaling CS teams</button>
+        <button class="chat-chip" data-q="What's your approach to customer retention?">Retention approach</button>
+        <button class="chat-chip" data-q="How did you build the customer function at Aether from scratch?">Building from zero</button>
+        <button class="chat-chip" data-q="What was your biggest commercial result at Mintel?">Mintel results</button>
+        <button class="chat-chip" data-q="Tell me about your leadership style.">Leadership style</button>
+      </div>
+
+      <div class="chat-messages" id="messages">
+        <div class="chat-empty" id="emptyState">Ask anything about Rosanna's career, results, or approach…</div>
+      </div>
+
+      <div class="chat-input-row">
+        <input type="text" class="chat-input" id="chatInput" placeholder="What would you like to know?" autocomplete="off" />
+        <button class="chat-send" id="chatSend">
+          Ask
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+
+      <div class="chat-disclaimer">
+        AI can make mistakes — please talk to the real Rosie to clarify project experience.
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── PERSONALITY ───────── -->
+  <section id="personality" class="fade-up">
+    <div class="section-head">
+      <div class="section-num">03 — Wiring</div>
+      <h2 class="section-title">How I'm <em>wired</em>.</h2>
+    </div>
+
+    <div class="personality-grid">
+      <div class="persona-card">
+        <div class="persona-source">DISC</div>
+        <div class="persona-code">DI</div>
+        <div class="persona-name">The Initiator</div>
+        <p class="persona-desc">Direct, results-oriented, and people-energised. Comfortable making the call, then bringing the team along. Bias to action over deliberation; bias to relationships over hierarchy.</p>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-source">Myers-Briggs</div>
+        <div class="persona-code">ESTJ</div>
+        <div class="persona-name">The Executive</div>
+        <p class="persona-desc">Organised, decisive, and structured. I find satisfaction in turning ambiguity into systems — operating models, SOPs, RACIs, KPIs — that let teams move with clarity and confidence.</p>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-source">Sparketype</div>
+        <div class="persona-code"><em>Essentialist</em></div>
+        <div class="persona-name">+ Sage</div>
+        <p class="persona-desc">Wired to identify what really matters and strip away the rest, then share what I've learned. The two together explain why I gravitate toward operating roles where structure and teaching meet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── EXPERIENCE ───────── -->
+  <section id="experience" class="fade-up">
+    <div class="section-head">
+      <div class="section-num">04 — Experience</div>
+      <h2 class="section-title">Where I've <em>built things</em>.</h2>
+    </div>
+
+    <div class="timeline">
+
+      <article class="role">
+        <div class="role-meta">
+          <div class="role-dates">2025 — Now</div>
+          <div class="role-location">Melbourne / Auckland</div>
+        </div>
+        <div class="role-content">
+          <h3 class="role-title">Co-Founder &amp; Chief Customer Officer</h3>
+          <div class="role-company">Aether <span class="sep">·</span> AI-native knowledge platform for marketing research</div>
+          <p class="role-context">Seed-funded ($3.8m) startup out of New+Improved (the team behind Tracksuit and Ideally). 18+ enterprise customers across ANZ &amp; US.</p>
+          <ul class="role-bullets">
+            <li>Built the <strong>customer function from zero</strong>: hired distributed team across ANZ and US, stood up Intercom helpdesk, structured onboarding, and renewal health dashboards.</li>
+            <li>Designed customer health scoring framework to drive proactive engagement and identify retention risk early.</li>
+            <li>Owned relationships through product-maturity challenges by managing expectations and building trust proactively — retained Kiwibank, TPG Telecom, Spark, Cochlear.</li>
+            <li>Established service standards and operating rhythm — weekly team kick-offs, customer health reviews, structured QBRs, Auckland offsites.</li>
+            <li>Partnered with engineering, sales, and marketing to translate frontline customer signals into product and GTM strategy.</li>
+            <li>Designed evaluation framework benchmarking Aether vs five generative AI platforms; result: 4.10/5.0 — <strong>equal to best-performing model</strong>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-meta">
+          <div class="role-dates">Oct 2024 — May 2025</div>
+          <div class="role-location">Melbourne</div>
+        </div>
+        <div class="role-content">
+          <h3 class="role-title">Customer Research Consultant</h3>
+          <div class="role-company">Datacom Australia <span class="sep">·</span> GTM Strategy Team</div>
+          <p class="role-context">Established first customer and market segmentation strategy to inform Australian growth.</p>
+          <ul class="role-bullets">
+            <li>Market and competitive research informing Australian growth strategy across service lines.</li>
+            <li>Insight reports and strategic recommendations to service-line leaders and senior management.</li>
+            <li>Financial analysis and forecasting for strategic planning and new business development.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-meta">
+          <div class="role-dates">Jul 2023 — Sep 2024</div>
+          <div class="role-location">UK / Europe / AU</div>
+        </div>
+        <div class="role-content">
+          <h3 class="role-title">Post-Graduate Study &amp; PMP Certification</h3>
+          <div class="role-company">Career break <span class="sep">·</span> repatriating to Australia</div>
+          <p class="role-context">Professional development while travelling, repatriating to Australia after 12 years across the UK and Singapore.</p>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-meta">
+          <div class="role-dates">2013 — 2023</div>
+          <div class="role-location">London / Singapore</div>
+        </div>
+        <div class="role-content">
+          <h3 class="role-title">VP of Client Service, APAC &amp; EMEA</h3>
+          <div class="role-company">Mintel Market Research <span class="sep">·</span> 9.5 years, four progressions</div>
+          <p class="role-context">Global consumer market research firm with both SaaS platform and consulting proposition. Progressed from Senior Client Services Manager → Team Lead → VP EMEA → VP APAC.</p>
+          <ul class="role-bullets">
+            <li>Owned the retention KPI across a <strong>$50M SaaS portfolio</strong> of 3,000 enterprise accounts and 50k monthly users.</li>
+            <li>Sustained <strong>90%+ value retention</strong>; designed CS referral program contributing $250k+ in upsell in FY22 alone.</li>
+            <li>Built and led a 30+ person multi-market customer success and support function across APAC and EMEA — designed the operating models including vision, structure, SLAs, KPIs, SOPs, RACI, hiring plans, and career ladders.</li>
+            <li>Transformed CS: unified regional teams, established full-service helpdesk, rolled out a global tiered service model.</li>
+            <li>Designed customer segmentation framework for commercial teams to service profitably and identify upsell opportunities.</li>
+            <li>Member of APAC Executive Leadership Group; influenced product, data governance, and commercial functions; led Salesforce enablement and adoption.</li>
+            <li>Key Account Winback (Associated British Foods): converted cancelled client into a 3-year, £70k/year deal.</li>
+            <li>FY22 retention improvement of 2% YoY = <strong>$520k saved</strong>; Exceeds Expectations FY21 &amp; FY22.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-meta">
+          <div class="role-dates">2009 — 2013</div>
+          <div class="role-location">Australia / France</div>
+        </div>
+        <div class="role-content">
+          <h3 class="role-title">Earlier career</h3>
+          <div class="role-company">QLD Government &amp; Local Councils <span class="sep">·</span> Rectorat de Bordeaux</div>
+          <ul class="role-bullets">
+            <li><strong>Economic Development Project Officer</strong> — trade, investment, and business advisory for state and local government and multinational clients.</li>
+            <li><strong>English Teacher</strong> — French national teaching assistants programme, Périgueux. Strengthened cross-cultural facilitation skills.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ───────── EDUCATION + SKILLS ───────── -->
+  <section id="education" class="fade-up">
+    <div class="section-head">
+      <div class="section-num">05 — Credentials</div>
+      <h2 class="section-title">Education &amp; <em>skills</em>.</h2>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="summary-label" style="margin-bottom:16px">Education</div>
+        <div class="edu-list">
+          <div class="edu-item">
+            <div class="edu-year">2024</div>
+            <div>
+              <div class="edu-title">Graduate Certificate in Digital Transformation <em style="color:var(--rose-deep);font-style:italic;font-weight:300">— Distinction</em></div>
+              <div class="edu-inst">RMIT University</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2023</div>
+            <div>
+              <div class="edu-title">PMP — Project Management Professional</div>
+              <div class="edu-inst">Project Management Institute</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2020</div>
+            <div>
+              <div class="edu-title">Mini MBA in Marketing</div>
+              <div class="edu-inst">Marketing Week with Mark Ritson</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2017</div>
+            <div>
+              <div class="edu-title">Value Proposition Creation &amp; Development</div>
+              <div class="edu-inst">Chartered Institute of Marketing (UK)</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2014</div>
+            <div>
+              <div class="edu-title">CELTA — Certificate in Teaching English</div>
+              <div class="edu-inst">University of Cambridge</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2008</div>
+            <div>
+              <div class="edu-title">Bachelor of Business, Economics &amp; French <em style="color:var(--rose-deep);font-style:italic;font-weight:300">— Distinction (6.75/7)</em></div>
+              <div class="edu-inst">Queensland University of Technology · Dean's Award</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="summary-label" style="margin-bottom:16px">Skills</div>
+
+        <div class="skill-cluster">
+          <div class="skill-cluster-label">Leadership</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Customer Success Leadership</span>
+            <span class="skill-tag">Service Operating Model</span>
+            <span class="skill-tag">Global Distributed Teams</span>
+            <span class="skill-tag">Executive Stakeholder Influence</span>
+            <span class="skill-tag">Cross-Functional Partnership</span>
+            <span class="skill-tag">Hiring &amp; Career Ladders</span>
+          </div>
+        </div>
+
+        <div class="skill-cluster">
+          <div class="skill-cluster-label">Customer &amp; Commercial</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Customer Health Scoring</span>
+            <span class="skill-tag">Voice of Customer</span>
+            <span class="skill-tag">Retention Strategy</span>
+            <span class="skill-tag">Commercial Acumen</span>
+            <span class="skill-tag">Segmentation Frameworks</span>
+            <span class="skill-tag">Renewal &amp; Upsell Motion</span>
+            <span class="skill-tag">QBRs &amp; Onboarding</span>
+          </div>
+        </div>
+
+        <div class="skill-cluster">
+          <div class="skill-cluster-label">Markets &amp; Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">APAC</span>
+            <span class="skill-tag">EMEA</span>
+            <span class="skill-tag">ANZ</span>
+            <span class="skill-tag">Americas</span>
+            <span class="skill-tag">Salesforce</span>
+            <span class="skill-tag">Intercom</span>
+            <span class="skill-tag">Mixpanel</span>
+            <span class="skill-tag">AI / LLM evaluation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── CONTACT ───────── -->
+  <section id="contact" class="fade-up">
+    <div class="section-head">
+      <div class="section-num">06 — Contact</div>
+      <h2 class="section-title">Let's <em>talk</em>.</h2>
+    </div>
+
+    <div class="contact-block">
+      <div>
+        <h3>Open to <em>head of customer success</em> &amp; senior CX leadership roles in Melbourne.</h3>
+        <p>Currently exploring opportunities to lead and scale customer functions — particularly in subscription businesses, B2B SaaS, and AI-native products.</p>
+      </div>
+
+      <div class="contact-list">
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <a class="contact-value" href="mailto:rosanna.dedecius@gmail.com">rosanna.dedecius@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Phone</span>
+          <a class="contact-value" href="tel:+61428925624">+61 (0) 428 925 624</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">LinkedIn</span>
+          <a class="contact-value" href="https://linkedin.com/in/rosannadedecius" target="_blank" rel="noopener">/in/rosannadedecius</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Location</span>
+          <span class="contact-value" style="cursor:default">South Melbourne, AU</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="colophon">
+      © 2026 Rosanna Dedecius &nbsp;·&nbsp; Built with care
+    </footer>
+  </section>
+
+</div>
+
+<script>
+  // ───────── ASK ROSIE CHAT ─────────
+  // Calls a Cloudflare Worker that holds the Anthropic API key as an
+  // encrypted secret. The Worker also holds the system prompt with Rosanna's bio.
+
+  // 👇 STEP 7 — replace with your Cloudflare Worker URL
+  const WORKER_URL = "https://ask-rosie.YOURNAME.workers.dev";
+
+  const messagesEl = document.getElementById('messages');
+  const emptyState = document.getElementById('emptyState');
+  const inputEl = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('chatSend');
+  const chips = document.querySelectorAll('.chat-chip');
+
+  const conversation = [];
+  let isLoading = false;
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function renderMarkdown(text) {
+    let html = escapeHtml(text);
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    html = html.split(/\n\n+/).map(p => `<p>${p.replace(/\n/g, '<br/>')}</p>`).join('');
+    return html;
+  }
+
+  function addMessage(role, text) {
+    if (emptyState && emptyState.parentNode) emptyState.remove();
+    const div = document.createElement('div');
+    div.className = `msg ${role}`;
+    if (role === 'bot') {
+      div.innerHTML = `<span class="msg-label">Rosie AI</span>${renderMarkdown(text)}`;
+    } else {
+      div.textContent = text;
+    }
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return div;
+  }
+
+  function addTyping() {
+    if (emptyState && emptyState.parentNode) emptyState.remove();
+    const div = document.createElement('div');
+    div.className = 'msg bot';
+    div.id = 'typingIndicator';
+    div.innerHTML = '<span class="msg-label">Rosie AI</span><div class="typing"><span></span><span></span><span></span></div>';
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function removeTyping() {
+    const t = document.getElementById('typingIndicator');
+    if (t) t.remove();
+  }
+
+  async function sendMessage(text) {
+    if (!text || isLoading) return;
+    isLoading = true;
+    sendBtn.disabled = true;
+    inputEl.value = '';
+    addMessage('user', text);
+    conversation.push({ role: 'user', content: text });
+    addTyping();
+
+    try {
+      const response = await fetch(WORKER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: conversation })
+      });
+
+      const data = await response.json();
+      removeTyping();
+
+      if (data.error) {
+        addMessage('bot', `Sorry — ${data.error} Please try again, or email Rosanna directly at rosanna.dedecius@gmail.com.`);
+        return;
+      }
+
+      const reply = (data.content || [])
+        .filter(b => b.type === 'text')
+        .map(b => b.text)
+        .join('\n')
+        .trim();
+
+      if (reply) {
+        addMessage('bot', reply);
+        conversation.push({ role: 'assistant', content: reply });
+      } else {
+        addMessage('bot', "I had trouble answering that one — could you try rephrasing? Or you can email Rosanna directly at rosanna.dedecius@gmail.com.");
+      }
+    } catch (err) {
+      removeTyping();
+      addMessage('bot', "Something went wrong reaching the AI. Please try again, or email Rosanna directly at rosanna.dedecius@gmail.com.");
+      console.error(err);
+    } finally {
+      isLoading = false;
+      sendBtn.disabled = false;
+      inputEl.focus();
+    }
+  }
+
+  sendBtn.addEventListener('click', () => sendMessage(inputEl.value.trim()));
+  inputEl.addEventListener('keydown', e => {
+    if (e.key === 'Enter') sendMessage(inputEl.value.trim());
+  });
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => sendMessage(chip.dataset.q));
+  });
+
+  // ───────── STICKY NAV ─────────
+  const stickyNav = document.getElementById('stickyNav');
+  const hero = document.querySelector('header.hero');
+  const navLinks = document.querySelectorAll('.sticky-nav-links a');
+
+  const heroObserver = new IntersectionObserver(([entry]) => {
+    stickyNav.classList.toggle('visible', !entry.isIntersecting);
+  }, { threshold: 0 });
+  heroObserver.observe(hero);
+
+  // Highlight active section in nav
+  const sections = document.querySelectorAll('section[id]');
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => sectionObserver.observe(s));
+
+  // ───────── SCROLL ANIMATIONS ─────────
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  fadeEls.forEach(el => fadeObserver.observe(el));
+</script>
+</body>
+</html>
